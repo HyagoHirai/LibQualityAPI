@@ -88,6 +88,14 @@ docker build -t lib-quality .
 ```sh
 docker-compose up -d
 ```
+3. Migrate - (Optional) The application was developed to create tables after deploy. In case of failure, please run the next line
+```sh
+npx sequelize-cli db:seed:all
+```
+4. Seed - (Optional) Only if want a initial data in database
+```sh
+npx sequelize-cli db:seed:all
+```
 
 ## Usage
 
