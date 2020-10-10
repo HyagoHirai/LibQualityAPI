@@ -1,0 +1,294 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+        "version": "1.0.0",
+        "title": "LibQuality Swagger",
+        "contact": {
+            "email": "hyahirai@gmail.com"
+        }
+    },
+    "host": "localhost",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "Issues",
+            "description": "Operations about issues informations"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/{owner}/{repository}/issues": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Get repository info",
+                "description": "Get open issues, avg and standard deviation from repositories.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "path",
+                        "description": "Repository owner",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "repository",
+                        "in": "path",
+                        "description": "Repository name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "Username",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Issues"
+                        }
+                    }
+                }
+            }
+        },
+        "/{owner}/{repository}/statistics": {
+            "get": {
+                "tags": [
+                    "Issues"
+                ],
+                "summary": "Get repository statistics",
+                "description": "Get open statistics from repositories.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "path",
+                        "description": "Repository owner",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "repository",
+                        "in": "path",
+                        "description": "Repository name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "Username",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Statistics"
+                        }
+                    }
+                }
+            }
+        },
+        "/{owner}/{repository}/user": {
+            "post": {
+                "tags": [
+                    "User repository"
+                ],
+                "summary": "Create user repository",
+                "description": "Insert repository chosen by the user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "path",
+                        "description": "Repository owner",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "repository",
+                        "in": "path",
+                        "description": "Repository name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Insert"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "User repository"
+                ],
+                "summary": "Delete user repository",
+                "description": "Delete repository chosen by the user",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "owner",
+                        "in": "path",
+                        "description": "Repository owner",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "repository",
+                        "in": "path",
+                        "description": "Repository name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "in": "query",
+                        "description": "Username",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Delete"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Issues": {
+            "type": "object",
+            "properties": {
+                "openIssues": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "avg": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "stdDeviation": {
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "Statistics": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string"
+                    },
+                    "openIssues": {
+                        "type": "number",
+                        "format": "integer"
+                    }
+                }
+            },
+            "example": [
+                {
+                    "date": "2020-10-09",
+                    "openIsses": 8
+                },
+                {
+                    "date": "2020-10-10",
+                    "openIsses": 2
+                },
+                {
+                    "date": "2020-10-11",
+                    "openIsses": 10
+                },
+                {
+                    "date": "2020-10-12",
+                    "openIsses": 11
+                }
+            ]
+        },
+        "Insert": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "format": "integer"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "repository": {
+                    "type": "string"
+                },
+                "user": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date"
+                }
+            }
+        },
+        "Delete": {
+            "type": "number",
+            "format": "integer"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about LibQuality",
+        "url": "http://swagger.io"
+    }
+}
