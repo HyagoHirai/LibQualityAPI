@@ -72,7 +72,7 @@ async function getRepositoryIssuesInfo(owner, repository, numberOfIssues, state 
     try {
         const numberOfPages = Math.ceil(numberOfIssues / issuesPerPage);
         const pages = [...Array(numberOfPages).keys()].map((i) => i + 1);
-        const issuesDate = (await Promise.all(pages.map(async (page) => getRepositoryIssues(owner, repository, page, state)))).flat();
+        const issuesDate = _.flatten((await Promise.all(pages.map(async (page) => getRepositoryIssues(owner, repository, page, state)))));
         return issuesDate;
     } catch (error) {
         log.error(error.response.data.message);

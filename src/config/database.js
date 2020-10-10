@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = {
     test: {
         dialect: 'postgres',
-        host: 'db',
+        host: '127.0.0.1',
         username: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: 'test',
