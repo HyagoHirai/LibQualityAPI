@@ -8,8 +8,6 @@ services:
         env_file: .env
         depends_on:
             - db
-        volumes:
-            - ./scripts/app-init:/docker-entrypoint-initdb.d
         networks:
             - backend
 

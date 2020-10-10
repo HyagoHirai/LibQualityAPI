@@ -28,6 +28,8 @@ app.use('/api', repositoryDataRoute);
 app.use('/api', repositoryUserRoute);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+updateDataByDate(Date.now());
+
 const task = cron.schedule('0 0 */1 * * *', () => {
     updateDataByDate(Date.now());
 });

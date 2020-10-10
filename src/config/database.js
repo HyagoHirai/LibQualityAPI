@@ -3,6 +3,19 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
+    localhost: {
+        dialect: 'postgres',
+        host: '127.0.0.1',
+        username: process.env.POSTGRES_USER,
+        password: process.env.POSTGRES_PASSWORD,
+        database: 'development',
+        operatorAliases: false,
+        define: {
+            timestamps: true,
+            underscored: true,
+            underscoredAll: true,
+        },
+    },
     test: {
         dialect: 'postgres',
         host: '127.0.0.1',
