@@ -18,6 +18,8 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
+* [Test](#test)
+* [Contact](#contact)
 
 ## Architecture
 
@@ -129,7 +131,6 @@ npx sequelize-cli db:migrate --env test
 npm test
 ```
 
-<!-- CONTACT -->
 ## Contact
 
 Hyago Hirai - hyahirai@gmail.com
