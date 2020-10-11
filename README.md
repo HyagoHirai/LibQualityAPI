@@ -116,7 +116,7 @@ Delete repository chosen by user
 [DELETE] http://localhost/api/{owner}/{repository}/user?user=hyagohirai
 ```
 
-For more examples, please access swagger page http://localhost/api-docs/ or [Postman Collection](LibQualiy API.postman_collection.json)
+For more examples, please access swagger page http://localhost/api-docs/ or [Postman Collection](LibQualiyAPI.postman_collection.json)
 
 ## Test
 
