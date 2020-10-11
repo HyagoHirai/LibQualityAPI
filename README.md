@@ -59,7 +59,7 @@ The database chosen was postgreSQL. Overall, PostgreSQL is widely used in large 
 
 ### Docker
 
-Docker is used to deploy PostgreSQL DB and Node.js application
+Docker is used to deploy PostgreSQL DB and Node.js application. The advantages of using docker are high availability and load balancing being possible to scale easily
 
 ### Github API
 
@@ -90,7 +90,7 @@ docker-compose up -d
 ```
 3. Migrate - (Optional) The application was developed to create tables after deploy. In case of failure, please run the next line
 ```sh
-npx sequelize-cli db:seed:all
+npx sequelize-cli db:migrate --env localhost
 ```
 4. Seed - (Optional) Only if want a initial data in database
 ```sh
@@ -116,7 +116,7 @@ Delete repository chosen by user
 [DELETE] http://localhost/api/{owner}/{repository}/user?user=hyagohirai
 ```
 
-For more examples, please access swagger page http://localhost/api-docs/
+For more examples, please access swagger page http://localhost/api-docs/ or [Postman Collection](LibQualiy API.postman_collection.json)
 
 ## Test
 

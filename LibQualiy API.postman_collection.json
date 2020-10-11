@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "4d0a0cf0-2c20-4e2c-85c2-0fec8e7419b5",
+		"name": "LibQualiy API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/api/angular/angular/issues?user=hyagohirai",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/api/angular/angular/issues?user=hyagohirai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"angular",
+						"angular",
+						"issues"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "hyagohirai"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/angular/angular/statistics?user=hyagohirai",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/api/angular/angular/statistics?user=hyagohirai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"angular",
+						"angular",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "hyagohirai"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/angular/angular/user?user=hyagohirai",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": \"hyagohirai\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/api/angular/angular/user?user=hyagohirai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"angular",
+						"angular",
+						"user"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "hyagohirai"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/angular/angular/user?user=hyagohirai",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/api/angular/angular/user?user=hyagohirai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"angular",
+						"angular",
+						"user"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "hyagohirai"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
